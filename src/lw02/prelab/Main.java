@@ -79,5 +79,4 @@ public class Main {
             System.out.println(transactionsToPrint[0] + " " + transactionsToPrint[1] + " " + transactionsToPrint[2]);
         }
     }
-    
 }
