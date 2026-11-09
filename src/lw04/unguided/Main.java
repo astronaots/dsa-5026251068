@@ -7,9 +7,9 @@ public class Main {
         Scanner sc = new Scanner(Main.class.getResourceAsStream("cards.txt"));
 
         int n = sc.nextInt();
-        int[] kartu = new int[n];
+        int[] cards = new int[n];
         for (int i = 0; i < n; i++) {
-            kartu[i] = sc.nextInt();
+            cards[i] = sc.nextInt();
         }
 
         int m = sc.nextInt();
@@ -19,10 +19,10 @@ public class Main {
         }
         sc.close();
 
-        sortKartu(kartu, 2);
+        sortCards(cards, 2);
 
         for (int i = 0; i < n; i++) {
-            System.out.print(kartu[i]);
+            System.out.print(cards[i]);
             if (i < n - 1) {
                 System.out.print(" ");
             }
@@ -31,7 +31,7 @@ public class Main {
 
         for (int i = 0; i < m; i++) {
             int target = requested[i];
-            int index = findCard(kartu, target);
+            int index = findCard(cards, target);
 
             if (index != -1) {
                 System.out.println(target + ": FOUND at index " + index);
@@ -41,7 +41,7 @@ public class Main {
         }
     }
 
-    public static void sortKartu(int[] arr, int passes) {
+    public static void sortCards(int[] arr, int passes) {
         int n = arr.length;
         for (int i = 0; i < passes && i < n - 1; i++) {
             int idx = i;
